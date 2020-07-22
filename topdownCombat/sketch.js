@@ -18,7 +18,7 @@ function setup() {
         }
 	}
 
-	archer = new Troop(5, 6, 20)
+	archer = new Troop(12, 5, 17)
 }
 
 function draw() {
@@ -49,6 +49,13 @@ function draw() {
 function coordToPixel(x, y){
 	pixel = createVector(x * squareSize + 0.5 * squareSize, y * squareSize + 0.5 * squareSize);
 	return pixel;
+}
+
+function pixelToCoord(x, y){
+	xcoord = floor(x / squareSize);
+	ycoord = floor(y / squareSize);
+	coord = createVector(xcoord, ycoord);
+	return coord;
 }
 
 
