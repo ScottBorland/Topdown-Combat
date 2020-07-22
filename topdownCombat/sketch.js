@@ -22,8 +22,20 @@ function setup() {
 }
 
 function draw() {
-	background(51);
-	stroke(255);
+	//colour palette
+	//navy blue
+	let c1 = color(35, 61, 77);
+	//light green
+	let c2 = color(163, 193, 129);
+	//dark green
+	let c3 = color(97, 155, 138);
+	//orange
+	let c4 = color(254, 127, 45);
+	//mustard yellow
+	let c5 = color(252, 202, 70);
+
+	background(c2);
+	stroke(c3);
 	for(var i = 0; i < rows; i++){
 		line(0, i*squareSize, height, i*squareSize)
 	}
@@ -31,7 +43,7 @@ function draw() {
 		line(i*squareSize, 0, i*squareSize, height)
 	}
 
-	archer.show();
+	archer.show(c5);
 }
 
 function coordToPixel(x, y){

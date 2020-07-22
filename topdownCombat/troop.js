@@ -3,9 +3,9 @@ function Troop(x, y, r){
     this.pos = coordToPixel(this.coord.x, this.coord.y);
     this.r = r;
 
-    this.show = function(){
-        stroke(212, 66, 245);
-        fill(212, 66, 245);
+    this.show = function(colour){
+        stroke(colour);
+        fill(colour);
         ellipse(this.pos.x, this.pos.y, this.r)
     }
 }
