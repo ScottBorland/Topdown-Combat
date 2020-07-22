@@ -7,7 +7,7 @@ var squareSize = 50;
 var cols, rows;
 
 function setup() {
-	createCanvas(800, 800);
+	createCanvas(802, 802);
 
 	cols = floor(width/squareSize);
 	rows = floor(height/squareSize);
@@ -17,9 +17,8 @@ function setup() {
             grid.push(cell);
         }
 	}
-	console.log(grid)
 
-	archer = new Troop(50, 60, 20)
+	archer = new Troop(5, 6, 20)
 }
 
 function draw() {
@@ -34,3 +33,12 @@ function draw() {
 
 	archer.show();
 }
+
+function coordToPixel(x, y){
+	pixel = createVector(x * squareSize + 0.5 * squareSize, y * squareSize + 0.5 * squareSize);
+	return pixel;
+}
+
+
+
+

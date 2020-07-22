@@ -1,5 +1,6 @@
 function Troop(x, y, r){
-    this.pos = createVector(x, y);
+    this.coord = createVector(x, y);
+    this.pos = coordToPixel(this.coord.x, this.coord.y);
     this.r = r;
 
     this.show = function(){
