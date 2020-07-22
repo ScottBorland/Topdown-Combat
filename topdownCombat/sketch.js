@@ -35,7 +35,7 @@ function draw() {
 	let c5 = color(252, 202, 70);
 
 	background(c2);
-	stroke(c3);
+	stroke(c1);
 	for(var i = 0; i < rows; i++){
 		line(0, i*squareSize, height, i*squareSize)
 	}
@@ -43,7 +43,9 @@ function draw() {
 		line(i*squareSize, 0, i*squareSize, height)
 	}
 
-	archer.show(c5);
+	archer.show(c4);
+	mousePos = createVector(mouseX, mouseY);
+	archer.move(mousePos);
 }
 
 function coordToPixel(x, y){
