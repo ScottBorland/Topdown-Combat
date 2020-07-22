@@ -18,7 +18,8 @@ function setup() {
         }
 	}
 
-	archer = new Troop(12, 5, 17)
+	archer = new Troop(12, 5, 17);
+	archer.target = createVector(100, 200);
 }
 
 function draw() {
@@ -44,8 +45,8 @@ function draw() {
 	}
 
 	archer.show(c4);
-	mousePos = createVector(mouseX, mouseY);
-	archer.move(mousePos);
+	
+	archer.move(archer.target);
 }
 
 function coordToPixel(x, y){

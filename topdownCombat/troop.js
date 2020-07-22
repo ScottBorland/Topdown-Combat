@@ -10,6 +10,9 @@ function Troop(x, y, r){
     this.range;
     this.armour;
     this.magicResist;
+    
+    this.target;
+    this.wander = true;
 
     this.show = function(colour){
         stroke(colour);
@@ -18,10 +21,14 @@ function Troop(x, y, r){
     }
 
     this.move= function(target){
-        //var dir = target.sub(this.pos);
-        var dir = p5.Vector.sub(target, this.pos);
+        this.target = target;
+        var dir = p5.Vector.sub(this.target, this.pos);
         if(dir.mag() < this.moveSpeed){
-            this.pos = target;
+            this.pos = this.target;
+            if(this.wander){
+                this.target = createVector(random(width), random(height));
+                this.move(this.target);
+            }
         }else{
         dir.setMag(this.moveSpeed);
         this.pos.add(dir);
